@@ -1443,73 +1443,7 @@
     </div>
 
     <script>
-        // Données pour la galerie photos
-        const galleryPhotos = [
-            {
-                url: "images/IMMOLUXE.png",
-                title: "IMMOLUXE"
-            },
-            {
-                url: "images/Grand Hôtel à vendre sises à Saint Louis.png",
-                title: "Grand Hôtel à vendre sises à Saint Louis"
-            },
-            {
-                url: "images/img1.png",
-                title: "Grand Hôtel"
-            },
-            {
-                url: "images/img2.png",
-                title: "Immeuble en pleine ville"
-            },
-            {
-                url: "images/img3.png",
-                title: "Villa R+2 de luxe à vendre sises aux Almadies, derrière Philippe Morris, à proximité de l’École Américaine"
-            },
-            {
-                url: "images/img4.png",
-                title: "Résidence Sécurisée"
-            },
-            {
-                url: "images/img5.png",
-                title: "Propriété Exclusive 5"
-            },
-            {
-                url: "images/img6.png",
-                title: "Propriété Exclusive 6"
-            },
-            {
-                url: "images/img7.png",
-                title: "Propriété Exclusive 7"
-            },
-            {
-                url: "images/img8.png",
-                title: "Propriété Exclusive 8"
-            },
-            {
-                url: "images/img9.png",
-                title: "Propriété Exclusive 9"
-            },
-            {
-                url: "images/img10.png",
-                title: "Propriété Exclusive 10"
-            },
-        ];
 
-        // Données pour la galerie vidéos
-        const galleryVideos = [
-            {
-                url: "https://assets.mixkit.co/videos/preview/mixkit-modern-house-exterior-4323-large.mp4",
-                title: "SOMONE  Villa de rêve à vendre"
-            }, 
-            {
-                url: "https://assets.mixkit.co/videos/preview/mixkit-modern-house-exterior-4323-large.mp4",
-                title: "SOMONE  Villa de rêve à vendre"
-            },
-            {
-                url: "https://assets.mixkit.co/videos/preview/mixkit-modern-house-exterior-4323-large.mp4",
-                title: "SOMONE  Villa de rêve à vendre"
-            },
-        ];
 
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1538,55 +1472,7 @@
             window.open(`https://wa.me/221772185138?text=${message}`, '_blank');
         });
         
-        // Populate Photo Gallery
-        const photoGallery = document.getElementById('photoGallery');
-        galleryPhotos.forEach(photo => {
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'gallery-item';
-            galleryItem.innerHTML = `
-                <img src="${photo.url}" alt="${photo.title}">
-                <div class="gallery-overlay">
-                    <h4>${photo.title}</h4>
-                </div>
-            `;
-            
-            galleryItem.addEventListener('click', () => {
-                openImageModal(photo.url, photo.title);
-            });
-            
-            photoGallery.appendChild(galleryItem);
-        });
-        
-        // Populate Video Gallery
-        const videoGallery = document.getElementById('videoGallery');
-        galleryVideos.forEach(video => {
-            const videoItem = document.createElement('div');
-            videoItem.className = 'video-item';
-            videoItem.innerHTML = `
-                <video muted loop>
-                    <source src="${video.url}" type="video/mp4">
-                </video>
-                <div class="video-play-btn">
-                    <i class="fas fa-play"></i>
-                </div>
-            `;
-            
-            const videoElement = videoItem.querySelector('video');
-            const playBtn = videoItem.querySelector('.video-play-btn');
-            
-            playBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (videoElement.paused) {
-                    videoElement.play();
-                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                } else {
-                    videoElement.pause();
-                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
-                }
-            });
-            
-            videoGallery.appendChild(videoItem);
-        });
+
         
         // Image Modal Functions
         const imageModal = document.getElementById('imageModal');
